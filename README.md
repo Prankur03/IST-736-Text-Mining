@@ -1,1 +1,25 @@
 # IST-736-Text-Mining
+
+## PROJECT PROPOSAL
+ 
+## TOPIC MODELING on a million NEWS HEADLINES
+
+####	Problem statement
+Just like how every library will arrange their books based on their categories, even Media, Journals & News companies around the world who produce millions of news content everyday also aim to show/sell their news content to users and viewers in an organized and structured manner under specific topics. Australian Broadcasting Corporation (ABC) is interested in effectively categorizing and grouping all their news articles under specific topics to provide easy and quick access of news content for their viewers. 
+Objective: The goal of this project is to use the news headlines to identify all the topics of discussion in the news articles produced by Australian Broadcasting Corp. between the years 2003 and 2019. Also, each news headline can be categorized under a topic to help the users have a well-structured and easy access to the news content. Moreover, we can also cluster all the news headlines into groups. 
+
+####	Problem Modeling
+The proposed data set has no target variable. Hence, this is an unsupervised machine learning problem. Every document in the text data contains a unique news headline. From this project, we expect to get clusters of news headlines belonging to the similar group. We intend to explore the data by conducting unsupervised operations such as clustering, topic modeling, etc. The aim of this project is therefore to virtually arrange the news in such a way that it will be easier to navigate and easily find the required information from this data universe.
+
+####	Methodology (Algorithms & methods we plan to use)
+To accomplish the above project goal, we plan to use the Topic Modeling technique. This technique of topic modeling will help to organize and summarize this textual data, thereby enabling us to effectively find the main topics of the news and assign them to all the news headlines. The Latent Dirichlet Allocation (LDA) algorithm will help us to achieve this task of topic modeling and allocating topics to news headlines. We chose the LDA algorithm because it produces the topic level probability distribution for the words and also the document level probability distribution for the topics thereby making it very helpful for us to label each topic and also to allocate one or more topics to each news headline. We can also explore other algorithms such as Non-Negative Matrix Factorization (NMF) for Topic Modeling. We are planning to use k-means clustering algorithm for grouping the news headlines. 
+
+####	Data Description
+The proposed data set is obtained from the Kaggle website. The link to the data set can be found below this paragraph. This data set has two variables namely, ‘publish_date’ and ‘headline_text’. The first variable contains the information about the date on which the article was published, and the second variable contains the headline of the corresponding news articles. The given data set has a total of 1155838 observations. It is a collection of the headlines of news articles published over the period of 17 years (from 02/19/2003 to 12/31/2019). Most of the news articles have a focus on the news about Australia but many documents represent the historical records of noteworthy events around the planet.  
+Link to the data set: https://www.kaggle.com/therohk/million-headlines
+
+####	Evaluation methods
+To evaluate the LDA models we can use manual techniques such as word intrusion and topic intrusion to assess the coherence of the topics using human judgement. We can also use other techniques such as perplexity and log likelihood to evaluate the LDA model performance. Higher the value of log likelihood, the better is the performance of the model. Conversely, lower the perplexity, better is the performance of the model. Perplexity is calculated from log likelihood. Perplexity = exp (-1. * log-likelihood per word). To evaluate the K-means model, we can use the total sum of squared errors (total SSE) value to identify the optimum number of clusters.
+
+####	Expected Challenges
+There are over one million observations in this data set. And so, the size of the vocabulary is expected to be very large. We will try to reduce the size of the vocabulary by removing the redundant features by passing the corresponding arguments during vectorization of the data. Adding to that every document is just a news headline and not the entire article. Hence, it is expected that on an average every document will have just 8-10 words in the headline. With a large vocabulary and very few words in every document, the vectorized data matrix is expected to be very sparse. While using LDA for topic modelling with such conditions, a single word can affect the document-topic Dirichlet distribution drastically. Another challenge is that the performance evaluation of unsupervised learning models is trickier than the performance evaluation of supervised learning models. Hence, we take these challenges very seriously and hope to overcome them for better data exploration.
